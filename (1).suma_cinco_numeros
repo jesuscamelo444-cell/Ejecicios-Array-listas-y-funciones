@@ -1,0 +1,38 @@
+Funcion valor <- pedirNumero(texto)
+	Definir valor Como Real;
+	Escribir texto;
+	Leer valor;
+FinFuncion
+
+
+Funcion total <- sumarNumeros(lista, n)
+	Definir i Como Entero;
+	Definir total Como Real;
+	total <- 0;
+	Para i <- 1 Hasta n Hacer
+		total <- total + lista[i]
+	FinPara
+FinFuncion
+
+
+SubProceso mostrarSuma(resultado)
+	Escribir "La suma de los cinco numeros es de: ", resultado;
+FinSubProceso
+
+Algoritmo suma_cinco_numeros
+	Definir lista Como Real;
+	Definir i, total Como Entero;
+	Dimensionar lista[5]
+	
+	// pedir los numeros
+	Para i <- 1 Hasta 5 Hacer
+		lista[i] <- pedirNumero("Ingrese el numero "+ ConvertirATexto(i) + ":");
+	FinPara
+	
+	// calcular sumarNumeros
+	total <- sumarNumeros(lista, 5);
+	
+	// mostar resultado
+	mostrarSuma(total)
+	
+FinAlgoritmo
